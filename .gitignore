@@ -1,0 +1,28 @@
+# ROS 2 Workspace
+build/
+install/
+log/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Archivos de compilación de C++
+*.o
+*.so
+*.a
+*.a.d
+
+# Archivos de respaldo del editor
+*~
+*.swp
+*.bak
+
+# Archivos de IDEs
+.vscode/
+.idea/
+
+# Archivos de sistema operativo
+.DS_Store
+Thumbs.db
