@@ -2,7 +2,7 @@
 <!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
      Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
-<robot
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"
   name="Esamble_Sencillo_gripper">
 
   <!-- Link "mundo" para anclar el robot -->
@@ -403,4 +403,13 @@
       effort="0"
       velocity="0" />
   </joint>
+
+  <!-- ========= INICIO DE LA SECCIÓN CORREGIDA ========= -->
+  <!-- Importar la configuración de ros2_control desde el paquete de MoveIt -->
+  <xacro:include filename="$(find scara_moveit_config)/config/Esamble_Sencillo_gripper.ros2_control.xacro" />
+
+  <!-- Instanciar la macro definida en el archivo importado -->
+  <xacro:Esamble_Sencillo_gripper_ros2_control name="GazeboSim" initial_positions_file="$(find scara_moveit_config)/config/initial_positions.yaml"/>
+  <!-- ========= FIN DE LA SECCIÓN CORREGIDA ========= -->
+
 </robot>
